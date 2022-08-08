@@ -1,0 +1,13 @@
+command /gui: #You can do any command name as long as the command doesn't already exist
+	trigger:
+		set {_gui} to a new chest inventory with 3 row with name "&cTest"
+		set slot 0 of {_gui} to barrier with name "&cExit" #slot 0 is the first gui slot!
+		open {_gui} to player
+
+on inventory click:
+	if name of event-inventory is "&cTest":
+		if index of event-slot = 0:
+			close player's inventory
+			play sound "block.note_block.bass"
+      
+      #Made by N Tech on YT
